@@ -1,3 +1,10 @@
+-- Include aREST module
+local rest = require "aREST"
+
+-- Set module ID & name
+rest.set_id("1")
+rest.set_name("esp8266")
+
 return function(servermodules, payload, conn)
     for m,e in pairs(servermodules) do
         if e then --if enabled
@@ -9,6 +16,7 @@ return function(servermodules, payload, conn)
                     if server.detect(payload) then
                         print("tcpserver -> "..m)
                         server.install(conn)
+                        rest.handle(conn, payload)
     --                        server.onReceive(conn, payload) --forward current payload to detected server
                         collectgarbage()
                         return server.onReceive --return onReceive callback upwards

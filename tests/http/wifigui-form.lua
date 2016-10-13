@@ -12,16 +12,9 @@ return function (method, connection, wifiConfig, valuetable, badvalues)
     connection:send('<form method="POST">\r\n')
 
     collectgarbage()
-    dofile("http/wifigui-form-gen.lc")(utils, connection, wifiConfig, valuetable, badvalues)
-    collectgarbage()
-    dofile("http/wifigui-form-ap.lc") (utils, connection, wifiConfig, valuetable, badvalues)
-    collectgarbage()
-    dofile("http/wifigui-form-apnet.lc") (utils, connection, wifiConfig, valuetable, badvalues)
-    collectgarbage()
     dofile("http/wifigui-form-sta.lc")(utils, connection, wifiConfig, valuetable, badvalues)
     collectgarbage()
-    dofile("http/wifigui-form-stanet.lc")(utils, connection, wifiConfig, valuetable, badvalues)
-    collectgarbage()
+
 
     connection:send('<input type="submit" value="Submit" title="Apply values">\r\n<input type=reset title="Reset all fields">\r\n<button type="cancel" title="Cancel and go back to main webpage" onclick="window.location=\'/\';return false;">Cancel</button>\r\n</form>\r\n</body></html>')
 end

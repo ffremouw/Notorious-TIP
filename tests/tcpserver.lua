@@ -17,7 +17,6 @@ return function (port, _servermodules)
         serverOnReceive(conn, payload)
     end
 
-
     local s = net.createServer(net.TCP, 180) -- 180 seconds client timeout
     s:listen(port, function(conn)
                        conn:on("receive", detector)
