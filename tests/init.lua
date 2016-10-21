@@ -32,7 +32,7 @@ dofile("wifi.lc")
 tcpsrv = dofile("tcpserver.lc")(8080, {httpserver = true, luaserver = true})
 
 --STEP7: start the tftp server for easy file upload
---tftpsrv = dofile("tftpd.lc")(69)
+tftpsrv = dofile("tftpd.lc")(69)
 
 collectgarbage()
 print('heap after init: ', node.heap())
