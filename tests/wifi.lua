@@ -36,7 +36,7 @@ collectgarbage()
 
 -- Connect to the WiFi access point.
 -- Once the device is connected, you may start the HTTP server.
-
+print('wifi config')
 if (wifi.getmode() == wifi.STATION) or (wifi.getmode() == wifi.STATIONAP) then
     local joinCounter = 0
     local joinMaxAttempts = 5

@@ -2,9 +2,11 @@ return function (port, _servermodules)
     assert((not not wifi.sta.getip()) or (not not wifi.ap.getip()), "tcpserver: No viable IP found")
     assert(_servermodules ~= nil, "tcpserver: no server modules specified")
     local servermodules = _servermodules
-    
+    local key = "test"
 
     local function detector(conn, payload)
+        print(payload)
+        --print(crypto.decrypt("AES-CBC", key, payload))
         local serverOnReceive = dofile("tcpserver-detector.lc")(servermodules, payload, conn)
         collectgarbage()
         if not serverOnReceive then
@@ -16,7 +18,8 @@ return function (port, _servermodules)
         --forward payload to server onReceive
         serverOnReceive(conn, payload)
     end
-
+    
+    sk = net.createConnection(net.TCP, 0)
     local s = net.createServer(net.TCP, 180) -- 180 seconds client timeout
     s:listen(port, function(conn)
                        conn:on("receive", detector)
