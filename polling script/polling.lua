@@ -1,4 +1,5 @@
 tmr.alarm(0, 5000, 1, function ()
+    print("ayy lmao")
      net.cert.verify([[
     -----BEGIN CERTIFICATE-----
     MIIDjzCCAnegAwIBAgIJANDqjQohQMiwMA0GCSqGSIb3DQEBCwUAMF4xCzAJBgNV
