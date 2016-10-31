@@ -25,7 +25,7 @@ function test()
     -----END CERTIFICATE-----
     ]])
 
-    http.request("https://145.24.222.226/api", "GET", "Authorization: Basic dXNlcm5hbWU6UGFzc3dvcmQxMjM=", "", 
+    http.request("https://145.24.222.226/api", "GET", "", "", 
     function(code, data)
         if (code < 0) then
         print("HTTP request failed")
