@@ -1,4 +1,5 @@
 productid = "1"
+key = "1234123412341234"
 
 --STEP0: print some info
 print('chip: ',node.chipid())
@@ -29,9 +30,14 @@ tools = nil
 --STEP5: handle wifi config
 dofile("wifi.lc")
 
+
+
 --STEP6: start the TCP server in port 80, if an ip is available
 tcpsrv = dofile("tcpserver.lc")(8080, {httpserver = true, luaserver = true})
 
+if wifi.sta.getstatus == 5 then
+    dofile("polling.lc")
+end
 --STEP7: start the tftp server for easy file upload
 --tftpsrv = dofile("tftpd.lc")(69)
 

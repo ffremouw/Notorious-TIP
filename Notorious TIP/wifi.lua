@@ -1,3 +1,5 @@
+local polling = require("polling");
+
 -- Begin WiFi configuration
 
 --check if default config file exists, if not create it (should only happen the 1st time run after a format)
@@ -49,7 +51,12 @@ if (wifi.getmode() == wifi.STATION) or (wifi.getmode() == wifi.STATIONAP) then
           if joinCounter == joinMaxAttempts then
              print('Failed to connect to WiFi Access Point.')
           else
+          tmr.alarm(0, 5000, 1, function ()
+                print("ayy lmao")
+              end)
              print('IP: ',ip)
+             
+             
           end
           joinCounter = nil
           joinMaxAttempts = nil
