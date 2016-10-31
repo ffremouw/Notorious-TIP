@@ -1,12 +1,7 @@
 -- httpserver-servefunction
 -- Author: Daniel Salazar
 -- Based on work by Marcos Kirsch
--- Include aREST module
-local rest = require "aREST"
 
--- Set module ID & name
-rest.set_id("1")
-rest.set_name("esp8266")
 
 return function (connection, payload)
     local conf = dofile("confload.lc")("httpserver-conf.lc")
@@ -40,7 +35,6 @@ return function (connection, payload)
         if not fileExists then
             uri.args = {code = 404, errorString = "Not Found"}
             serveFunction = dofile("httpserver-error.lc")
-            rest.handle(connection, payload)
         elseif uri.isScript then
             serveFunction = dofile(uri.file)
         else
