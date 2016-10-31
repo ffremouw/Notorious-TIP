@@ -9,8 +9,6 @@ return function(servermodules, payload, conn)
                     if server.detect(payload) then
                         print("tcpserver -> "..m)
                         server.install(conn)
-                        print("test")
-                        
     --                        server.onReceive(conn, payload) --forward current payload to detected server
                         collectgarbage()
                         return server.onReceive --return onReceive callback upwards

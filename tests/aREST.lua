@@ -28,6 +28,8 @@ end
 
 function aREST.handle(conn, request)
 
+print(request)
+
 -- Variables
 local pin
 local command
