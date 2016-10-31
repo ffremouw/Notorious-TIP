@@ -1,5 +1,5 @@
 # Notorious-TIP
 
-Source code for the ESP capebilities.
+Source code for the ESP capabilities.
 
-Heavely based on https://github.com/devyte/nodemcu-platform and https://github.com/marcoschwartz/aREST-ESP8266
+Heavily based on https://github.com/devyte/nodemcu-platform and https://github.com/marcoschwartz/aREST-ESP8266
