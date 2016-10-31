@@ -1,3 +1,5 @@
+productid = "1"
+
 --STEP0: print some info
 print('chip: ',node.chipid())
 print('heap: ',node.heap())
