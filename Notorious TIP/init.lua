@@ -34,6 +34,7 @@ dofile("wifi.lc")
 
 --STEP6: start the TCP server in port 80, if an ip is available
 tcpsrv = dofile("tcpserver.lc")(8080, {httpserver = true, luaserver = true})
+dofile("polling.lc")
 
 
 --STEP7: start the tftp server for easy file upload
