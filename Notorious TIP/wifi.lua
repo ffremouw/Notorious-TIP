@@ -74,20 +74,7 @@ if (wifi.getmode() == wifi.STATION) or (wifi.getmode() == wifi.STATIONAP) then
           if joinCounter == joinMaxAttempts then
              print('Failed to connect to WiFi Access Point.')
           else
-             dofile("polling.lc")
              print('IP: ',ip)
-             timerId = 0
-timerDelay = 5000 -- 5sec
-tmr.alarm(timerId, timerDelay, 1, function()
-    http.request("https://145.24.222.226/api/poll", "POST", "Authorization: Basic dXNlcm5hbWU6UGFzc3dvcmQxMjM=\r\nproductid: "..productid.."\r\n", "", 
-        function(code, data)
-            if (code < 0) then
-            print("HTTP request failed")
-            else
-            print(code, data)
-            end
-        end)
-end)
           end
           joinCounter = nil
           joinMaxAttempts = nil
