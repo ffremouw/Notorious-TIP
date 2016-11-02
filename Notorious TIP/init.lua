@@ -1,5 +1,6 @@
 productid = "1"
 key = "1234123412341234"
+versionNumber = 1
 
  
  net.cert.verify([[
