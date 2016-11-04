@@ -2,11 +2,12 @@ timerId = 0
 timerDelay = 5000 -- 5sec
 tmr.alarm(timerId, timerDelay, 1, function()
 if wifi.sta.status()  == 5 then
-    http.request("https://145.24.222.226/api/poll", "POST", "Authorization: Basic dXNlcm5hbWU6UGFzc3dvcmQxMjM=\r\nproductid: "..productid.."\r\n", "", 
+    http.request("https://145.24.222.226/api/poll", "POST", "Authorization: Basic dGVzdHVzZXI6UGFzc3dvcmQxMjM=\r\nproductid: "..productid.."\r\n", "", 
         function(code, data)
             if (code < 0) then
             print("HTTP request failed")
             else
+            print(data)
             command = crypto.decrypt("AES-ECB", key, encoder.fromHex(data))
             if string.find(command, "false") == nil then
              --must be true

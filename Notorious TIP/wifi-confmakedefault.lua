@@ -26,8 +26,8 @@ wifiConfig.accessPointDHCPConfig.enabled = 1 -------------------------wifi.ap.dh
 wifiConfig.accessPointDHCPConfig.start = "192.168.111.100"
 
 wifiConfig.stationPointConfig = {}
-wifiConfig.stationPointConfig.ssid = "H368N2B1049"        -- Name of the WiFi network you want to join
-wifiConfig.stationPointConfig.pwd =  "3DA3EC2EE4E3"                -- Password for the WiFi network
+wifiConfig.stationPointConfig.ssid = "09743"        -- Name of the WiFi network you want to join
+wifiConfig.stationPointConfig.pwd =  "master123"                -- Password for the WiFi network
 wifiConfig.stationPointConfig.auto = 1
 wifiConfig.stationPointConfig.hostname = "ESP-"..node.chipid()
 

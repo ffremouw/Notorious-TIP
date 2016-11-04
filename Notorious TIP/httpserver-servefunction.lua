@@ -17,6 +17,7 @@ return function (connection, payload)
     end
 
     local req = dofile("httpserver-request.lc")(payload)
+    print("req method")
     print(req.method .. ": " .. req.request)
 
     local serveFunction = nil
