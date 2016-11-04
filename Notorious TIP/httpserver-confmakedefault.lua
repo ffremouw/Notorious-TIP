@@ -4,7 +4,7 @@ local httpservConfig = {}
 httpservConfig.auth = {}
 httpservConfig.auth.enabled = true
 httpservConfig.auth.realm = "Notorious TIP" -- displayed in the login dialog users get
-httpservConfig.auth.user = "username"
-httpservConfig.auth.password = "Password123" -- PLEASE change this
+httpservConfig.auth.user = ""
+httpservConfig.auth.password = "" -- PLEASE change this
 
 return httpservConfig
