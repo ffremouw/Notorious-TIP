@@ -15,6 +15,7 @@ return function (conn)
 
 
     local function onReceive(connection, payload)
+        print("onreceive")
         collectgarbage()
 --print("httpserver: onReceive() heap="..node.heap())
         payload, fullPayload, bBodyMissing = dofile("httpserver-payload.lc")(payload, fullPayload, bBodyMissing)
@@ -23,24 +24,24 @@ return function (conn)
 --print("onReceive(): incomplete payload, will concat")
             return
         end
-
+        print("serve function")
         local serveFunction, req = dofile("httpserver-servefunction.lc")(connection, payload)
         payload = nil
         collectgarbage()
-
---print("startServing() heap="..node.heap())
+        
+print("startServing() heap="..node.heap())
         local tbconn = dofile("tbconnection.lc")(connection)
         tbconn:run(serveFunction, req, req.uri.args)
         tbconn = nil
---print("startServing() end  heap="..node.heap())
+print("startServing() end  heap="..node.heap())
 
         serveFunction = nil
         req = nil
         collectgarbage()
---print("httpserver: onReceive() end  heap="..node.heap())
+print("httpserver: onReceive() end  heap="..node.heap())
     end
 
-
+    print("install")
     local function install(connection)
         connection:on("receive", onReceive)
     end

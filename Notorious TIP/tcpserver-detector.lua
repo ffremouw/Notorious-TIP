@@ -4,6 +4,8 @@ return function(servermodules, payload, conn)
             --load the server module
             local modfname = m..".lc"
             if file.exists(modfname) then
+                print(modfname)
+                print(conn)
                 local server = dofile(modfname)(conn)
                 if server and server.detect and server.install and server.onReceive then
                     if server.detect(payload) then

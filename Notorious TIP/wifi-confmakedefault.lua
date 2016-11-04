@@ -7,7 +7,7 @@ wifiConfig.mode = wifi.STATIONAP
 wifiConfig.phymode = wifi.PHYMODE_N
 
 wifiConfig.accessPointConfig = {}
-wifiConfig.accessPointConfig.ssid = ""  -- Name of the SSID you want to create
+wifiConfig.accessPointConfig.ssid = "Just the TIP"  -- Name of the SSID you want to create
 wifiConfig.accessPointConfig.pwd = ""    -- WiFi password - at least 8 characters
 wifiConfig.accessPointConfig.auth = wifi.WPA2_PSK --OPEN/WPA_PSK/WPA2_PSK/WPA_WPA2_PSK
 wifiConfig.accessPointConfig.channel = 6 -- 1-14

@@ -3,6 +3,7 @@ return function(payload, fullPayload, bBodyMissing)
    
     if payload:find("Content%-Length:") or bBodyMissing then
         if fullPayload then 
+            print("full payload")
             fullPayload = fullPayload .. payload 
         else
             fullPayload = payload 
